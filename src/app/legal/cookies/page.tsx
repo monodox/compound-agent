@@ -8,11 +8,10 @@ export default function Cookies() {
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-indigo-50 via-white to-slate-100">
       <AppHeader />
-      <div className="flex-1 container mx-auto px-4 py-8 max-w-4xl">
+      <div className="flex-1 container mx-auto px-4 py-8 max-w-4xl mt-16">
         <Link href="/auth/login">
           <Button variant="ghost" className="mb-4">
-            <ArrowLeft className="h-4 w-4 mr-2" />
-            Back to Login
+            <ArrowLeft className="h-4 w-4" />
           </Button>
         </Link>
         <h1 className="text-3xl font-bold mb-6">Cookie Policy</h1>
