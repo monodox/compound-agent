@@ -68,16 +68,16 @@ export default function VersionDiff({ params }: { params: { id: string, versionI
           <CardContent>
             <div className="font-mono text-sm space-y-1">
               <div className="bg-red-50 text-red-800 p-2 rounded">
-                <span className="text-red-600">-</span> "timeout": 5000
+                <span className="text-red-600">-</span> &quot;timeout&quot;: 5000
               </div>
               <div className="bg-green-50 text-green-800 p-2 rounded">
-                <span className="text-green-600">+</span> "timeout": 10000,
+                <span className="text-green-600">+</span> &quot;timeout&quot;: 10000,
               </div>
               <div className="bg-green-50 text-green-800 p-2 rounded">
-                <span className="text-green-600">+</span> "retry": {"{"} "attempts": 3, "delay": 1000 {"}"}
+                <span className="text-green-600">+</span> &quot;retry&quot;: &lbrace; &quot;attempts&quot;: 3, &quot;delay&quot;: 1000 &rbrace;
               </div>
               <div className="p-2">
-                "url": "https://api.example.com/data"
+                &quot;url&quot;: &quot;https://api.example.com/data&quot;
               </div>
             </div>
           </CardContent>

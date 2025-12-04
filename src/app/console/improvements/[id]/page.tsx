@@ -30,16 +30,16 @@ export default function ImprovementDetail({ params }: { params: { id: string } }
                   <div>
                     <h3 className="font-medium mb-2">Current Implementation</h3>
                     <div className="bg-red-50 p-3 rounded font-mono text-sm">
-                      <div className="text-red-800">for (const item of items) {"{"}</div>
+                      <div className="text-red-800">for (const item of items) &lbrace;</div>
                       <div className="text-red-800 ml-4">await apiCall(item)</div>
-                      <div className="text-red-800">{"}"}</div>
+                      <div className="text-red-800">&rbrace;</div>
                     </div>
                   </div>
                   <div>
                     <h3 className="font-medium mb-2">Proposed Implementation</h3>
                     <div className="bg-green-50 p-3 rounded font-mono text-sm">
                       <div className="text-green-800">const batches = chunk(items, 10)</div>
-                      <div className="text-green-800">await Promise.all(batches.map(batch =></div>
+                      <div className="text-green-800">await Promise.all(batches.map(batch =&gt;</div>
                       <div className="text-green-800 ml-4">apiCall(batch)</div>
                       <div className="text-green-800">))</div>
                     </div>
