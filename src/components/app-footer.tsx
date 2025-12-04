@@ -5,7 +5,7 @@ export function AppFooter() {
   return (
     <footer className="w-full p-6 bg-gradient-to-r from-indigo-900 to-indigo-800 text-indigo-200">
       <div className="flex justify-between items-start mb-4">
-        <div>
+        <div className="pl-6">
           <div className="font-semibold text-white flex items-center gap-2">
             <Bot className="h-6 w-6" />
             Compound Agent
@@ -16,7 +16,7 @@ export function AppFooter() {
             <div>using AI-powered intelligence.</div>
           </div>
         </div>
-        <div>
+        <div className="pr-6">
           <div className="text-sm font-semibold text-white mb-2">Legal</div>
           <div className="flex flex-col gap-1">
             <Link href="/legal/terms" className="text-sm hover:text-white">

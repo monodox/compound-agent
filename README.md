@@ -2,6 +2,8 @@
 
 A self-improving automation engine that builds, monitors, and optimizes workflows autonomously using AI-powered intelligence.
 
+🔗 **[Live Demo](https://compound-agent.vercel.app)** | 📚 **[GitHub Repository](https://github.com/monodox/compound-agent)**
+
 ![Compound Agent](https://img.shields.io/badge/version-1.0.0-indigo)
 ![Next.js](https://img.shields.io/badge/Next.js-14-black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)

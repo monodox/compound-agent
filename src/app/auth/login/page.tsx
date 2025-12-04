@@ -68,13 +68,26 @@ export default function Login() {
         <CardContent className="space-y-6">
           <div className="space-y-2">
             <label htmlFor="email" className="text-sm font-medium">Email</label>
-            <Input id="email" type="email" placeholder="Enter your email" />
+            <Input id="email" type="email" defaultValue="test@example.com" />
           </div>
           <div className="space-y-2">
             <label htmlFor="password" className="text-sm font-medium">Password</label>
-            <Input id="password" type="password" placeholder="Enter your password" />
+            <Input id="password" type="password" defaultValue="password" />
           </div>
-          <Button className="w-full">Sign In</Button>
+          <Button 
+            className="w-full" 
+            onClick={() => {
+              const email = (document.getElementById('email') as HTMLInputElement)?.value
+              const password = (document.getElementById('password') as HTMLInputElement)?.value
+              if (email === 'test@example.com' && password === 'password') {
+                window.location.href = '/console/dashboard'
+              } else {
+                alert('Invalid credentials. Use test@example.com / password')
+              }
+            }}
+          >
+            Sign In
+          </Button>
           <div className="text-center space-y-2">
             <Link href="/auth/forgot-password" className="text-sm text-indigo-600 hover:underline">
               Forgot your password?
