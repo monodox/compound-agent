@@ -9,7 +9,7 @@ export function AppFooter() {
           <Bot className="h-6 w-6 text-white" />
           <div>
             <div className="font-semibold text-white">Compound Agent</div>
-            <div className="text-sm">AI-powered workflow automation</div>
+            <div className="text-sm">A self-improving automation engine that builds, monitors, and optimizes workflows autonomously using AI-powered intelligence.</div>
           </div>
         </div>
         <div className="flex gap-6">
