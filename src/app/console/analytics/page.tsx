@@ -2,13 +2,14 @@ import { ConsoleLayout } from '@/components/console-layout'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { TrendingUp, TrendingDown, AlertTriangle, Zap } from 'lucide-react'
 import { mockData } from '@/lib/mock-data'
+import { mockIntegrationData, isTestCredentials } from '@/lib/mock-integrations'
 import { isTestUser } from '@/lib/auth'
 
 export default function Analytics() {
-  const showMockData = isTestUser()
-  const metrics = showMockData ? mockData.analytics.metrics : { overallSuccessRate: 0, avgLatency: 0, errorFrequency: 0, improvements: 0 }
-  const bottlenecks = showMockData ? mockData.analytics.bottlenecks : []
-  const improvements = showMockData ? mockData.analytics.recentImprovements : []
+  const useTestData = isTestUser() || isTestCredentials(process.env.CEREBRAS_API_KEY || '')
+  const performance = useTestData ? mockIntegrationData.console.analytics.performance : { cpu: 0, memory: 0, latency: 0, throughput: 0 }
+  const bottlenecks = useTestData ? mockData.analytics.bottlenecks : []
+  const improvements = useTestData ? mockData.analytics.recentImprovements : []
   
   return (
     <ConsoleLayout>
@@ -19,7 +20,7 @@ export default function Analytics() {
               <CardTitle className="text-sm font-medium">Overall Success Rate</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold text-green-600">{mockData.analytics.metrics.overallSuccessRate}%</div>
+              <div className="text-2xl font-bold text-green-600">{performance.cpu}%</div>
             </CardContent>
           </Card>
           
@@ -28,7 +29,7 @@ export default function Analytics() {
               <CardTitle className="text-sm font-medium">Avg Latency</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold text-blue-600">{mockData.analytics.metrics.avgLatency}s</div>
+              <div className="text-2xl font-bold text-blue-600">{performance.latency}ms</div>
             </CardContent>
           </Card>
           
@@ -37,7 +38,7 @@ export default function Analytics() {
               <CardTitle className="text-sm font-medium">Error Frequency</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold text-red-600">{mockData.analytics.metrics.errorFrequency}%</div>
+              <div className="text-2xl font-bold text-red-600">{performance.memory}%</div>
             </CardContent>
           </Card>
           
@@ -46,7 +47,7 @@ export default function Analytics() {
               <CardTitle className="text-sm font-medium">Improvements</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold text-indigo-600">{mockData.analytics.metrics.improvements}</div>
+              <div className="text-2xl font-bold text-indigo-600">{performance.throughput}</div>
             </CardContent>
           </Card>
         </div>

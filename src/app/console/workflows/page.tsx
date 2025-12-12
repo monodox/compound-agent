@@ -4,10 +4,12 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Play, Edit, FileText, RotateCcw, CheckCircle, XCircle, Clock } from 'lucide-react'
 import { mockData } from '@/lib/mock-data'
+import { mockIntegrationData, isTestCredentials } from '@/lib/mock-integrations'
 import { isTestUser } from '@/lib/auth'
 
 export default function Workflows() {
-  const workflows = isTestUser() ? mockData.workflows : []
+  const useTestData = isTestUser() || isTestCredentials(process.env.LIQUIDMETAL_API_KEY || '')
+  const workflows = useTestData ? (mockData.workflows.length > 0 ? mockData.workflows : mockIntegrationData.console.workflows) : []
   
   return (
     <ConsoleLayout>

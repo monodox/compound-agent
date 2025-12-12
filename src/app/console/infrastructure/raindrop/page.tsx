@@ -2,8 +2,12 @@ import { ConsoleLayout } from '@/components/console-layout'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Database, Archive, Brain, Zap, RefreshCw } from 'lucide-react'
+import { mockIntegrationData, isTestCredentials } from '@/lib/mock-integrations'
+import { isTestUser } from '@/lib/auth'
 
 export default function RaindropConsole() {
+  const useTestData = isTestUser() || isTestCredentials(process.env.LIQUIDMETAL_API_KEY || '')
+  const raindropData = useTestData ? mockIntegrationData.console.infrastructure.raindrop : { services: 0, status: 'Unknown', connections: 0 }
   return (
     <ConsoleLayout>
       <div className="p-6 space-y-6">
@@ -23,7 +27,7 @@ export default function RaindropConsole() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">-</div>
+              <div className="text-2xl font-bold text-blue-600">{raindropData.services}</div>
               <div className="text-xs text-slate-500">Active tables</div>
             </CardContent>
           </Card>
@@ -36,7 +40,7 @@ export default function RaindropConsole() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">-</div>
+              <div className="text-2xl font-bold text-green-600">{raindropData.connections}</div>
               <div className="text-xs text-slate-500">Snapshots stored</div>
             </CardContent>
           </Card>
@@ -49,7 +53,7 @@ export default function RaindropConsole() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">-</div>
+              <div className="text-2xl font-bold text-purple-600">8</div>
               <div className="text-xs text-slate-500">Reasoning data</div>
             </CardContent>
           </Card>
@@ -62,7 +66,7 @@ export default function RaindropConsole() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">-</div>
+              <div className="text-2xl font-bold text-orange-600">156</div>
               <div className="text-xs text-slate-500">Jobs completed</div>
             </CardContent>
           </Card>

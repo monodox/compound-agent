@@ -4,6 +4,7 @@ import { Activity, CheckCircle, XCircle, TrendingUp, Settings, Plus } from 'luci
 import { mockData } from '@/lib/mock-data'
 import { isTestUser } from '@/lib/auth'
 import { AIIntegrationPanel } from '@/components/ai-integration-panel'
+import { RaindropServicesPanel } from '@/components/raindrop-services-panel'
 
 export default function Dashboard() {
   const showMockData = isTestUser()
@@ -60,6 +61,18 @@ export default function Dashboard() {
             </CardHeader>
             <CardContent>
               <AIIntegrationPanel />
+            </CardContent>
+          </Card>
+        </div>
+
+        <div className="mb-8">
+          <Card>
+            <CardHeader>
+              <CardTitle>Raindrop Platform</CardTitle>
+              <CardDescription>SmartSQL, SmartBuckets, SmartMemory, and SmartInference services</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <RaindropServicesPanel />
             </CardContent>
           </Card>
         </div>
