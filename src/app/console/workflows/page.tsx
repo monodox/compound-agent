@@ -9,7 +9,7 @@ import { isTestUser } from '@/lib/auth'
 
 export default function Workflows() {
   const useTestData = isTestUser() || isTestCredentials(process.env.LIQUIDMETAL_API_KEY || '')
-  const workflows = useTestData ? (mockData.workflows.length > 0 ? mockData.workflows : mockIntegrationData.console.workflows) : []
+  const workflows = useTestData ? mockIntegrationData.console.workflows : []
   
   return (
     <ConsoleLayout>
@@ -62,7 +62,7 @@ export default function Workflows() {
                 <CardContent>
                   <div className="flex gap-6 text-sm text-slate-600">
                     <span>Last run: {workflow.lastRun}</span>
-                    <span>Versions: {workflow.versions}</span>
+                    <span>Versions: {(workflow as any).versions || 1}</span>
                   </div>
                 </CardContent>
               </Card>

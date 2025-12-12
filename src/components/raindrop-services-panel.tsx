@@ -47,7 +47,7 @@ export function RaindropServicesPanel() {
 
   useEffect(() => {
     refreshServices();
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div className="space-y-4">

@@ -38,9 +38,11 @@ export const mockIntegrationData = {
   
   console: {
     workflows: [
-      { id: 'wf-001', name: 'E-commerce Data Pipeline', status: 'Active', created: '2024-01-15', lastRun: '2 hours ago' },
-      { id: 'wf-002', name: 'Customer Analytics', status: 'Paused', created: '2024-01-10', lastRun: '1 day ago' },
-      { id: 'wf-003', name: 'Inventory Sync', status: 'Active', created: '2024-01-08', lastRun: '30 minutes ago' }
+      { id: 'wf-001', name: 'E-commerce Data Pipeline', status: 'success', created: '2024-01-15', lastRun: '2 hours ago', versions: 3, executions: 156, successRate: 98.5 },
+      { id: 'wf-002', name: 'Customer Analytics', status: 'running', created: '2024-01-10', lastRun: '1 day ago', versions: 2, executions: 89, successRate: 96.2 },
+      { id: 'wf-003', name: 'Inventory Sync', status: 'success', created: '2024-01-08', lastRun: '30 minutes ago', versions: 4, executions: 234, successRate: 99.1 },
+      { id: 'wf-004', name: 'Payment Processing', status: 'failed', created: '2024-01-05', lastRun: '45 minutes ago', versions: 1, executions: 67, successRate: 94.8 },
+      { id: 'wf-005', name: 'Email Automation', status: 'success', created: '2024-01-12', lastRun: '1 hour ago', versions: 2, executions: 123, successRate: 97.3 }
     ],
     analytics: {
       performance: { cpu: 68, memory: 45, latency: 120, throughput: 1250 },

@@ -78,7 +78,33 @@ export default function RaindropConsole() {
               <CardTitle>SmartSQL Tables</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-slate-500">No tables available</p>
+              {useTestData ? (
+                <div className="space-y-3">
+                  <div className="p-3 border rounded-lg">
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="font-medium text-sm">workflows</span>
+                      <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded">24 rows</span>
+                    </div>
+                    <div className="text-xs text-gray-500">Stores workflow definitions and metadata</div>
+                  </div>
+                  <div className="p-3 border rounded-lg">
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="font-medium text-sm">executions</span>
+                      <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded">1,847 rows</span>
+                    </div>
+                    <div className="text-xs text-gray-500">Execution logs and performance metrics</div>
+                  </div>
+                  <div className="p-3 border rounded-lg">
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="font-medium text-sm">optimizations</span>
+                      <span className="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded">156 rows</span>
+                    </div>
+                    <div className="text-xs text-gray-500">AI-generated optimization suggestions</div>
+                  </div>
+                </div>
+              ) : (
+                <p className="text-sm text-slate-500">No tables available</p>
+              )}
             </CardContent>
           </Card>
 
@@ -87,7 +113,42 @@ export default function RaindropConsole() {
               <CardTitle>Recent SmartInference Jobs</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-slate-500">No recent jobs</p>
+              {useTestData ? (
+                <div className="space-y-3">
+                  <div className="p-3 border rounded-lg">
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="font-medium text-sm">Workflow Optimization</span>
+                      <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded">Completed</span>
+                    </div>
+                    <div className="text-xs text-gray-500 space-y-1">
+                      <div>Duration: 1.2s</div>
+                      <div>Suggestions: 3 optimizations generated</div>
+                    </div>
+                  </div>
+                  <div className="p-3 border rounded-lg">
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="font-medium text-sm">Anomaly Detection</span>
+                      <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded">Running</span>
+                    </div>
+                    <div className="text-xs text-gray-500 space-y-1">
+                      <div>Progress: 78%</div>
+                      <div>ETA: 30 seconds</div>
+                    </div>
+                  </div>
+                  <div className="p-3 border rounded-lg">
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="font-medium text-sm">Performance Scoring</span>
+                      <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded">Completed</span>
+                    </div>
+                    <div className="text-xs text-gray-500 space-y-1">
+                      <div>Score: 96.5/100</div>
+                      <div>Improvements: 2 suggestions</div>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <p className="text-sm text-slate-500">No recent jobs</p>
+              )}
             </CardContent>
           </Card>
         </div>
@@ -97,7 +158,45 @@ export default function RaindropConsole() {
             <CardTitle>SmartBuckets Snapshots</CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-sm text-slate-500">No snapshots available</p>
+            {useTestData ? (
+              <div className="space-y-3">
+                <div className="p-3 border rounded-lg">
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="font-medium text-sm">wf-001-v1.2.3</span>
+                    <span className="text-xs text-gray-500">2.1 MB</span>
+                  </div>
+                  <div className="text-xs text-gray-500 space-y-1">
+                    <div>Created: 2024-01-15 14:25:08</div>
+                    <div>Type: Workflow snapshot</div>
+                    <div>Status: Verified</div>
+                  </div>
+                </div>
+                <div className="p-3 border rounded-lg">
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="font-medium text-sm">optimization-backup-001</span>
+                    <span className="text-xs text-gray-500">1.8 MB</span>
+                  </div>
+                  <div className="text-xs text-gray-500 space-y-1">
+                    <div>Created: 2024-01-15 13:45:22</div>
+                    <div>Type: Optimization backup</div>
+                    <div>Status: Archived</div>
+                  </div>
+                </div>
+                <div className="p-3 border rounded-lg">
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="font-medium text-sm">system-state-20240115</span>
+                    <span className="text-xs text-gray-500">5.4 MB</span>
+                  </div>
+                  <div className="text-xs text-gray-500 space-y-1">
+                    <div>Created: 2024-01-15 12:00:00</div>
+                    <div>Type: System state backup</div>
+                    <div>Status: Active</div>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <p className="text-sm text-slate-500">No snapshots available</p>
+            )}
           </CardContent>
         </Card>
       </div>
