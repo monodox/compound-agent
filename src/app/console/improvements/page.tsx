@@ -2,76 +2,67 @@ import Link from 'next/link'
 import { ConsoleLayout } from '@/components/console-layout'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { CheckCircle, XCircle, Zap, TrendingUp } from 'lucide-react'
-
-const improvements: any[] = []
+import { CheckCircle, Clock, Play, TrendingUp } from 'lucide-react'
+import { mockData } from '@/lib/mock-data'
 
 export default function Improvements() {
+  const getStatusIcon = (status: string) => {
+    switch (status) {
+      case 'deployed': return <CheckCircle className="h-4 w-4 text-green-600" />
+      case 'testing': return <Play className="h-4 w-4 text-blue-600" />
+      default: return <Clock className="h-4 w-4 text-yellow-600" />
+    }
+  }
+
+  const getStatusColor = (status: string) => {
+    switch (status) {
+      case 'deployed': return 'bg-green-100 text-green-800'
+      case 'testing': return 'bg-blue-100 text-blue-800'
+      case 'approved': return 'bg-indigo-100 text-indigo-800'
+      default: return 'bg-yellow-100 text-yellow-800'
+    }
+  }
+
   return (
     <ConsoleLayout>
       <div className="container mx-auto px-4 py-8">
-        <div className="space-y-4">
-          {improvements.length === 0 ? (
-            <Card>
-              <CardContent className="p-8 text-center">
-                <p className="text-slate-600">No improvement suggestions available.</p>
-              </CardContent>
-            </Card>
-          ) : (
-            improvements.map((improvement) => (
-              <Card key={improvement.id}>
-                <CardHeader>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <Zap className="h-5 w-5 text-blue-600" />
-                      <div>
-                        <CardTitle className="text-lg">{improvement.title}</CardTitle>
-                        <div className="text-sm text-slate-600">{improvement.workflow}</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <div className="text-sm">
-                        <span className="font-medium">Confidence:</span> {improvement.confidence}%
-                      </div>
-                      <div className={`px-2 py-1 rounded text-xs font-medium ${
-                        improvement.impact === 'High' ? 'bg-red-100 text-red-800' : 'bg-yellow-100 text-yellow-800'
-                      }`}>
-                        {improvement.impact} Impact
-                      </div>
-                    </div>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    <p className="text-sm text-slate-600">{improvement.reasoning}</p>
-                    <div className="flex gap-3">
-                      <Link href={`/console/improvements/${improvement.id}`}>
-                        <Button size="sm" variant="outline">View Details</Button>
-                      </Link>
-                      <Button size="sm" className="bg-green-600 hover:bg-green-700">
-                        <CheckCircle className="h-4 w-4 mr-1" />
-                        Approve
-                      </Button>
-                      <Button size="sm" variant="outline" className="text-red-600 hover:text-red-700">
-                        <XCircle className="h-4 w-4 mr-1" />
-                        Reject
-                      </Button>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))
-          )}
+        <div className="mb-8">
+          <h1 className="text-3xl font-bold mb-2">AI Improvements</h1>
+          <p className="text-slate-600">Automated optimizations discovered by Compound Agent</p>
         </div>
 
-        <Card className="mt-8">
-          <CardHeader>
-            <CardTitle>AI Analysis Summary</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-sm text-slate-600">No analysis data available</p>
-          </CardContent>
-        </Card>
+        <div className="space-y-4">
+          {mockData.improvements.map((improvement) => (
+            <Card key={improvement.id}>
+              <CardHeader>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <CardTitle className="text-lg">{improvement.title}</CardTitle>
+                    <div className="flex items-center gap-2">
+                      {getStatusIcon(improvement.status)}
+                      <span className={`text-xs px-2 py-1 rounded font-medium ${getStatusColor(improvement.status)}`}>
+                        {improvement.status}
+                      </span>
+                    </div>
+                  </div>
+                  <Link href={`/console/improvements/${improvement.id}`}>
+                    <Button size="sm">View Details</Button>
+                  </Link>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <div className="flex items-center gap-6 text-sm">
+                  <div className="flex items-center gap-2">
+                    <TrendingUp className="h-4 w-4 text-green-600" />
+                    <span>Impact: {improvement.impact}</span>
+                  </div>
+                  <span>Confidence: {improvement.confidence}%</span>
+                  <span className="capitalize">Type: {improvement.type}</span>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
       </div>
     </ConsoleLayout>
   )

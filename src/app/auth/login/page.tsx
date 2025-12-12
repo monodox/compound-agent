@@ -76,13 +76,24 @@ export default function Login() {
           </div>
           <Button 
             className="w-full" 
-            onClick={() => {
+            onClick={async () => {
               const email = (document.getElementById('email') as HTMLInputElement)?.value
               const password = (document.getElementById('password') as HTMLInputElement)?.value
-              if (email === 'test@example.com' && password === 'password') {
-                window.location.href = '/console/dashboard'
-              } else {
-                alert('Invalid credentials. Use test@example.com / password')
+              
+              try {
+                const response = await fetch('/api/auth/login', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({ email, password })
+                })
+                
+                if (response.ok) {
+                  window.location.href = '/console/dashboard'
+                } else {
+                  alert('Invalid credentials. Use test@example.com / password')
+                }
+              } catch (error) {
+                alert('Login failed. Please try again.')
               }
             }}
           >

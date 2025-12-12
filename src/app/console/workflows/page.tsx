@@ -3,10 +3,12 @@ import { ConsoleLayout } from '@/components/console-layout'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Play, Edit, FileText, RotateCcw, CheckCircle, XCircle, Clock } from 'lucide-react'
-
-const workflows: any[] = []
+import { mockData } from '@/lib/mock-data'
+import { isTestUser } from '@/lib/auth'
 
 export default function Workflows() {
+  const workflows = isTestUser() ? mockData.workflows : []
+  
   return (
     <ConsoleLayout>
       <div className="container mx-auto px-4 py-8">

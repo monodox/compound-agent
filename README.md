@@ -103,11 +103,12 @@ npm run lint    # Run ESLint
 ```
 
 ### Environment Setup
-Create a `.env.local` file:
-```env
-# Add your environment variables here
-NEXT_PUBLIC_APP_URL=http://localhost:3000
+Create a `.env.local` file by copying from the example:
+```bash
+cp .env.example .env.local
 ```
+
+Then fill in your actual API keys and configuration values. See `.env.example` for all required variables.
 
 ## 🔧 Configuration
 
@@ -121,6 +122,33 @@ NEXT_PUBLIC_APP_URL=http://localhost:3000
 - API Integration (REST workflows)
 - Database Sync (Data synchronization)
 - Custom workflows from scratch
+
+## 🌐 External Services
+
+### Raindrop Platform Services
+- **SmartSQL**: Intelligent database query optimization and management
+- **SmartBuckets**: Scalable object storage with AI-powered data organization
+- **SmartMemory**: High-performance caching and in-memory data processing
+- **SmartInference**: AI model serving and inference optimization
+
+### Vultr Platform Services
+- **Compute Instances**: Scalable virtual machines for workflow execution
+- **Kubernetes Engine**: Container orchestration for microservices
+- **Object Storage**: Reliable file and data storage
+- **Load Balancers**: Traffic distribution and high availability
+- **Database**: Managed PostgreSQL and MySQL instances
+
+### Additional External Services
+- **WorkOS**: Enterprise-grade authentication and user management
+  - *Why chosen*: Provides SSO, directory sync, and compliance features essential for enterprise adoption
+- **Vercel**: Frontend hosting and deployment platform
+  - *Why chosen*: Seamless Next.js integration with global CDN and automatic deployments
+- **Framer Motion**: Animation library for React
+  - *Why chosen*: Provides smooth, performant animations that enhance user experience
+- **Lucide React**: Icon library
+  - *Why chosen*: Consistent, customizable SVG icons with excellent React integration
+- **shadcn/ui**: Component library
+  - *Why chosen*: Modern, accessible components built on Radix UI with Tailwind CSS styling
 
 ## 📊 Features Overview
 
