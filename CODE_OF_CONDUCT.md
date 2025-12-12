@@ -34,9 +34,48 @@ Community leaders have the right and responsibility to remove, edit, or reject c
 
 This Code of Conduct applies within all community spaces, and also applies when an individual is officially representing the community in public spaces. Examples of representing our community include using an official e-mail address, posting via an official social media account, or acting as an appointed representative at an online or offline event.
 
-## Enforcement
+## Community Guidelines
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement at conduct@compoundagent.com. All complaints will be reviewed and investigated promptly and fairly.
+### Technical Discussions
+
+* **Stay on topic** and keep discussions relevant to Compound Agent
+* **Be constructive** in your criticism and suggestions
+* **Provide context** and examples when reporting issues
+* **Respect different skill levels** and be patient with newcomers
+* **Share knowledge freely** and help others learn
+
+### Collaboration
+
+* **Be inclusive** in planning and decision-making
+* **Credit others** for their contributions and ideas
+* **Communicate clearly** and ask for clarification when needed
+* **Be responsive** to feedback and questions
+* **Respect project maintainers'** time and decisions
+
+## Reporting Guidelines
+
+### How to Report
+
+Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to:
+
+* **Email**: conduct@compoundagent.com
+* **Anonymous form**: Available on our website
+* **Direct message** to project maintainers
+
+### What to Include
+
+* **Description of the incident** and what happened
+* **When and where** the incident occurred
+* **Names of individuals involved** (if comfortable sharing)
+* **Any additional context** that might be helpful
+
+### Response Process
+
+All complaints will be:
+* **Reviewed promptly** within 48 hours
+* **Investigated fairly** and thoroughly
+* **Handled confidentially** with discretion
+* **Followed up** with appropriate action
 
 All community leaders are obligated to respect the privacy and security of the reporter of any incident.
 

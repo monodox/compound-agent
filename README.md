@@ -1,6 +1,6 @@
 # Compound Agent
 
-A self-improving automation engine that builds, monitors, and optimizes workflows autonomously using AI-powered intelligence.
+A self-improving automation engine that builds, monitors, and optimizes workflows autonomously using AI-powered intelligence. Built for the Raindrop Hackathon, Compound Agent leverages cutting-edge AI services and cloud infrastructure to create an intelligent operations platform.
 
 🔗 **[Live Demo](https://compound-agent.vercel.app)** | 📚 **[GitHub Repository](https://github.com/monodox/compound-agent)**
 
@@ -8,26 +8,53 @@ A self-improving automation engine that builds, monitors, and optimizes workflow
 ![Next.js](https://img.shields.io/badge/Next.js-14-black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-3-cyan)
+![Raindrop](https://img.shields.io/badge/Raindrop-MCP-purple)
+![Vultr](https://img.shields.io/badge/Vultr-Compute-orange)
 
 ## 🚀 Features
 
-- **AI Operations Engineer**: 24/7 monitoring and optimization
-- **Auto-Optimization**: Continuous performance improvements
+### Core Automation
+- **AI Operations Engineer**: 24/7 monitoring and optimization powered by Cerebras AI
+- **Auto-Optimization**: Continuous performance improvements with LiquidMetal workflows
 - **Smart Analytics**: Real-time insights and bottleneck detection
-- **Safe Deployment**: Automated testing and rollback
-- **Infrastructure Management**: Vultr and Raindrop integrations
-- **Workflow Automation**: Visual workflow builder and templates
-- **Agent Playground**: Interactive AI assistant
+- **Safe Deployment**: Automated testing and rollback mechanisms
+- **Voice Alerts**: ElevenLabs-powered audio notifications for critical events
+
+### Infrastructure Integration
+- **Vultr Compute**: Dedicated worker VMs for workflow execution and testing
+- **Raindrop Platform**: Complete MCP integration with SmartSQL, SmartBuckets, SmartMemory, and SmartInference
+- **Multi-Cloud Support**: Seamless integration across cloud providers
+
+### AI-Powered Intelligence
+- **Cerebras AI**: Ultra-fast inference for workflow optimization and anomaly detection
+- **LiquidMetal**: Advanced workflow orchestration and automation
+- **ElevenLabs**: Natural voice synthesis for alerts and notifications
+- **Smart Context**: Persistent AI memory for continuous learning
 
 ## 🛠️ Tech Stack
 
+### Frontend
 - **Framework**: Next.js 14 with App Router
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS + shadcn/ui
+- **Language**: TypeScript 5
+- **Styling**: Tailwind CSS + shadcn/ui components
 - **Icons**: Lucide React
 - **Animations**: Framer Motion
+- **State Management**: React hooks + Context API
+
+### AI & ML Services
+- **Cerebras**: Ultra-fast AI inference for optimization and analysis
+- **LiquidMetal**: Workflow orchestration and automation engine
+- **ElevenLabs**: Voice synthesis for alerts and notifications
+
+### Infrastructure & Backend
+- **Vultr Compute**: Dedicated worker VMs for execution
+- **Raindrop Platform**: Complete MCP integration
+  - SmartSQL: Workflow definitions and metrics storage
+  - SmartBuckets: Version control and snapshots
+  - SmartMemory: Persistent AI context and reasoning
+  - SmartInference: AI-powered optimization generation
 - **Authentication**: WorkOS integration ready
-- **Infrastructure**: Vultr + Raindrop ecosystem
+- **Deployment**: Vercel with global CDN
 
 ## 📦 Installation
 

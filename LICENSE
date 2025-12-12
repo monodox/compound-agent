@@ -19,3 +19,17 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+---
+
+## Third-Party Services
+
+This project integrates with the following third-party services:
+
+- **Cerebras AI**: Subject to Cerebras Terms of Service
+- **LiquidMetal/Raindrop**: Subject to LiquidMetal Terms of Service
+- **ElevenLabs**: Subject to ElevenLabs Terms of Service
+- **Vultr**: Subject to Vultr Terms of Service
+- **Vercel**: Subject to Vercel Terms of Service
+
+Users are responsible for complying with the terms of service of these providers when using this software.
