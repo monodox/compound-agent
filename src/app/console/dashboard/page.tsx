@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Activity, CheckCircle, XCircle, TrendingUp, Settings, Plus } from 'lucide-react'
 import { mockData } from '@/lib/mock-data'
 import { isTestUser } from '@/lib/auth'
+import { AIIntegrationPanel } from '@/components/ai-integration-panel'
 
 export default function Dashboard() {
   const showMockData = isTestUser()
@@ -47,6 +48,18 @@ export default function Dashboard() {
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold text-blue-600">{metrics.improvements || '-'}</div>
+            </CardContent>
+          </Card>
+        </div>
+
+        <div className="mb-8">
+          <Card>
+            <CardHeader>
+              <CardTitle>AI Integration Hub</CardTitle>
+              <CardDescription>Manage LiquidMetal, ElevenLabs, and Cerebras integrations</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <AIIntegrationPanel />
             </CardContent>
           </Card>
         </div>
