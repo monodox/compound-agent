@@ -8,10 +8,42 @@ import { mockIntegrationData, isTestCredentials } from '@/lib/mock-integrations'
 import { isTestUser } from '@/lib/auth'
 import { useState, useEffect } from 'react'
 
+interface VultrInstance {
+  id: string
+  label: string
+  status: string
+  region: string
+  plan: string
+  main_ip: string
+  vcpu_count: number
+  ram: number
+  disk: number
+}
+
+interface VultrMetrics {
+  cpu_percentage: number
+  memory_percentage: number
+  disk_percentage: number
+  network_in?: number
+  network_out?: number
+}
+
+interface VultrExecution {
+  id: string
+  workflowId: string
+  status: string
+  startTime: string
+  duration?: number
+  results?: {
+    success: boolean
+    optimizations?: string[]
+  }
+}
+
 export default function VultrConsole() {
-  const [instances, setInstances] = useState([])
-  const [metrics, setMetrics] = useState({ cpu_percentage: 0, memory_percentage: 0, disk_percentage: 0 })
-  const [executions, setExecutions] = useState([])
+  const [instances, setInstances] = useState<VultrInstance[]>([])
+  const [metrics, setMetrics] = useState<VultrMetrics>({ cpu_percentage: 0, memory_percentage: 0, disk_percentage: 0 })
+  const [executions, setExecutions] = useState<VultrExecution[]>([])
   
   const fetchVultrData = async () => {
     try {
@@ -105,11 +137,11 @@ export default function VultrConsole() {
                 </div>
                 <div className="flex justify-between text-sm">
                   <span>Network In:</span>
-                  <span className="font-medium">{((metrics as any).network_in / 1000000).toFixed(1)}MB</span>
+                  <span className="font-medium">{((metrics.network_in || 0) / 1000000).toFixed(1)}MB</span>
                 </div>
                 <div className="flex justify-between text-sm">
                   <span>Network Out:</span>
-                  <span className="font-medium">{((metrics as any).network_out / 1000000).toFixed(1)}MB</span>
+                  <span className="font-medium">{((metrics.network_out || 0) / 1000000).toFixed(1)}MB</span>
                 </div>
                 <div className="flex justify-between text-sm">
                   <span>Uptime:</span>
@@ -125,7 +157,7 @@ export default function VultrConsole() {
             </CardHeader>
             <CardContent>
               <div className="space-y-3">
-                {executions.length > 0 ? executions.map((exec: any) => (
+                {executions.length > 0 ? executions.map((exec) => (
                   <div key={exec.id} className="p-3 border rounded-lg">
                     <div className="flex justify-between items-center mb-2">
                       <span className="font-medium text-sm">{exec.workflowId}</span>
@@ -168,7 +200,7 @@ export default function VultrConsole() {
                   <div>[2024-01-15 14:30:25] INFO: Worker instance {instances[0]?.id} started successfully</div>
                   <div>[2024-01-15 14:29:18] INFO: Health check passed - CPU: {metrics.cpu_percentage}%, Memory: {metrics.memory_percentage}%</div>
                   <div>[2024-01-15 14:28:45] INFO: Workflow execution completed in {executions[0]?.duration || 145}s</div>
-                  <div>[2024-01-15 14:27:32] INFO: Network traffic: {((metrics as any).network_in / 1000000).toFixed(1)}MB in, {((metrics as any).network_out / 1000000).toFixed(1)}MB out</div>
+                  <div>[2024-01-15 14:27:32] INFO: Network traffic: {((metrics.network_in || 0) / 1000000).toFixed(1)}MB in, {((metrics.network_out || 0) / 1000000).toFixed(1)}MB out</div>
                   <div>[2024-01-15 14:26:15] INFO: Disk usage at {metrics.disk_percentage}% - within normal limits</div>
                   <div>[2024-01-15 14:25:08] INFO: Auto-scaling evaluation: current capacity sufficient</div>
                   <div>[2024-01-15 14:24:22] INFO: Security scan completed - no vulnerabilities detected</div>
