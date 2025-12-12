@@ -38,10 +38,16 @@ export function ConsoleHeader({ sidebarOpen, setSidebarOpen }: ConsoleHeaderProp
               <Settings className="h-4 w-4" />
               Profile
             </Link>
-            <Link href="/auth/login" className="flex items-center gap-2 px-4 py-2 text-sm hover:bg-slate-100">
+            <button 
+              onClick={async () => {
+                await fetch('/api/auth/logout', { method: 'POST' })
+                window.location.href = '/auth/login'
+              }}
+              className="flex items-center gap-2 px-4 py-2 text-sm hover:bg-slate-100 w-full text-left"
+            >
               <LogOut className="h-4 w-4" />
               Logout
-            </Link>
+            </button>
           </div>
         )}
       </div>
