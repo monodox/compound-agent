@@ -8,10 +8,10 @@ import { AIIntegrationPanel } from '@/components/ai-integration-panel'
 import { RaindropServicesPanel } from '@/components/raindrop-services-panel'
 
 export default function Dashboard() {
-  const useTestData = isTestUser() || isTestCredentials(process.env.CEREBRAS_API_KEY || '')
-  const metrics = useTestData ? (mockData.dashboard.metrics.totalWorkflows > 0 ? mockData.dashboard.metrics : { totalWorkflows: 24, successRate: 96.5, failures24h: 2, improvements: 8 }) : { totalWorkflows: 0, successRate: 0, failures24h: 0, improvements: 0 }
-  const activity = useTestData ? (mockData.dashboard.recentActivity.length > 0 ? mockData.dashboard.recentActivity : mockIntegrationData.console.workflows.map(w => ({ id: w.id, type: 'success', message: `${w.name} completed successfully`, time: w.lastRun }))) : []
-  const health = useTestData ? (mockData.dashboard.systemHealth.smartSQL !== 'Unknown' ? mockData.dashboard.systemHealth : { smartSQL: 'Healthy', vultrWorker: 'Running', smartInference: 'Active', smartBuckets: 'Online' }) : { smartSQL: 'Unknown', vultrWorker: 'Unknown', smartInference: 'Unknown', smartBuckets: 'Unknown' }
+  const useTestData = isTestUser() || isTestCredentials(process.env.CEREBRAS_API_KEY || '') || process.env.NODE_ENV === 'development'
+  const metrics = useTestData ? mockData.dashboard.metrics : { totalWorkflows: 0, successRate: 0, failures24h: 0, improvements: 0 }
+  const activity = useTestData ? mockData.dashboard.recentActivity : []
+  const health = useTestData ? mockData.dashboard.systemHealth : { smartSQL: 'Unknown', vultrWorker: 'Unknown', smartInference: 'Unknown', smartBuckets: 'Unknown' }
 
   return (
     <ConsoleLayout>

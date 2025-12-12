@@ -38,11 +38,147 @@ export const mockIntegrationData = {
   
   console: {
     workflows: [
-      { id: 'wf-001', name: 'E-commerce Data Pipeline', status: 'success', created: '2024-01-15', lastRun: '2 hours ago', versions: 3, executions: 156, successRate: 98.5 },
-      { id: 'wf-002', name: 'Customer Analytics', status: 'running', created: '2024-01-10', lastRun: '1 day ago', versions: 2, executions: 89, successRate: 96.2 },
-      { id: 'wf-003', name: 'Inventory Sync', status: 'success', created: '2024-01-08', lastRun: '30 minutes ago', versions: 4, executions: 234, successRate: 99.1 },
-      { id: 'wf-004', name: 'Payment Processing', status: 'failed', created: '2024-01-05', lastRun: '45 minutes ago', versions: 1, executions: 67, successRate: 94.8 },
-      { id: 'wf-005', name: 'Email Automation', status: 'success', created: '2024-01-12', lastRun: '1 hour ago', versions: 2, executions: 123, successRate: 97.3 }
+      { 
+        id: 'wf-001', 
+        name: 'E-commerce Data Pipeline', 
+        status: 'success', 
+        created: '2024-01-15', 
+        lastRun: '2 hours ago', 
+        versions: 3, 
+        executions: 156, 
+        successRate: 98.5,
+        description: 'Processes customer orders and updates inventory',
+        credentials: {
+          apiKey: 'test_key_ecommerce_123',
+          endpoint: 'https://api.test.example.com/v1',
+          username: 'test_user_pipeline',
+          type: 'api_key'
+        }
+      },
+      { 
+        id: 'wf-002', 
+        name: 'Customer Analytics', 
+        status: 'running', 
+        created: '2024-01-10', 
+        lastRun: '1 day ago', 
+        versions: 2, 
+        executions: 89, 
+        successRate: 96.2,
+        description: 'Analyzes customer behavior and generates reports',
+        credentials: {
+          apiKey: 'test_key_analytics_456',
+          endpoint: 'https://analytics.test.example.com',
+          database: 'test_analytics_db',
+          type: 'database'
+        }
+      },
+      { 
+        id: 'wf-003', 
+        name: 'Inventory Sync', 
+        status: 'success', 
+        created: '2024-01-08', 
+        lastRun: '30 minutes ago', 
+        versions: 4, 
+        executions: 234, 
+        successRate: 99.1,
+        description: 'Synchronizes inventory across multiple warehouses',
+        credentials: {
+          apiKey: 'test_key_inventory_789',
+          endpoint: 'https://inventory.test.example.com/api',
+          token: 'test_token_inv_xyz123',
+          type: 'oauth'
+        }
+      },
+      { 
+        id: 'wf-004', 
+        name: 'Payment Processing', 
+        status: 'failed', 
+        created: '2024-01-05', 
+        lastRun: '45 minutes ago', 
+        versions: 1, 
+        executions: 67, 
+        successRate: 94.8,
+        description: 'Handles payment transactions and refunds',
+        credentials: {
+          apiKey: 'test_key_payment_abc',
+          secretKey: 'test_secret_payment_def',
+          endpoint: 'https://payments.test.example.com',
+          merchantId: 'test_merchant_12345',
+          type: 'api_key'
+        }
+      },
+      { 
+        id: 'wf-005', 
+        name: 'Email Automation', 
+        status: 'success', 
+        created: '2024-01-12', 
+        lastRun: '1 hour ago', 
+        versions: 2, 
+        executions: 123, 
+        successRate: 97.3,
+        description: 'Sends automated emails for marketing campaigns',
+        credentials: {
+          apiKey: 'test_key_email_ghi',
+          endpoint: 'https://email.test.example.com/v2',
+          senderId: 'test_sender@example.com',
+          type: 'smtp'
+        }
+      },
+      { 
+        id: 'wf-006', 
+        name: 'Social Media Publisher', 
+        status: 'success', 
+        created: '2024-01-18', 
+        lastRun: '15 minutes ago', 
+        versions: 1, 
+        executions: 45, 
+        successRate: 99.5,
+        description: 'Posts content across multiple social media platforms',
+        credentials: {
+          apiKey: 'test_key_social_jkl',
+          accessToken: 'test_token_social_mno',
+          endpoint: 'https://social.test.example.com/api',
+          platforms: ['twitter', 'facebook', 'linkedin'],
+          type: 'oauth'
+        }
+      },
+      { 
+        id: 'wf-007', 
+        name: 'Database Backup', 
+        status: 'success', 
+        created: '2024-01-20', 
+        lastRun: '3 hours ago', 
+        versions: 5, 
+        executions: 312, 
+        successRate: 99.8,
+        description: 'Creates automated backups of critical databases',
+        credentials: {
+          host: 'test-db.example.com',
+          port: '5432',
+          username: 'test_backup_user',
+          password: 'test_pass_backup_789',
+          database: 'test_production_db',
+          type: 'database'
+        }
+      },
+      { 
+        id: 'wf-008', 
+        name: 'AI Content Generator', 
+        status: 'running', 
+        created: '2024-01-22', 
+        lastRun: 'Just now', 
+        versions: 2, 
+        executions: 78, 
+        successRate: 95.7,
+        description: 'Generates marketing content using AI models',
+        credentials: {
+          apiKey: 'test_key_ai_pqr',
+          endpoint: 'https://ai.test.example.com/v1/generate',
+          modelId: 'test-gpt-4-turbo',
+          organization: 'test_org_12345',
+          type: 'api_key'
+        }
+      }
     ],
     analytics: {
       performance: { cpu: 68, memory: 45, latency: 120, throughput: 1250 },

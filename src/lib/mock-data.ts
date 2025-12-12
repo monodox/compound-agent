@@ -1,19 +1,23 @@
 export const mockData = {
   dashboard: {
     metrics: {
-      totalWorkflows: 12,
-      activeWorkflows: 8,
-      successRate: 98.7,
-      failures24h: 3,
-      improvements: 7,
+      totalWorkflows: 24,
+      activeWorkflows: 18,
+      successRate: 96.8,
+      failures24h: 2,
+      improvements: 12,
       totalExecutions: 15420,
       avgResponseTime: 2.3
     },
     recentActivity: [
-      { id: 1, type: 'success', message: 'Workflow "Data Processing" completed', time: '2 minutes ago' },
-      { id: 2, type: 'improvement', message: 'Performance improved by 15%', time: '5 minutes ago' },
-      { id: 3, type: 'created', message: 'New workflow "API Sync" created', time: '12 minutes ago' },
-      { id: 4, type: 'optimization', message: 'Auto-optimization applied to "Email Queue"', time: '18 minutes ago' }
+      { id: 1, type: 'success', message: 'Workflow "E-commerce Data Pipeline" completed successfully', time: '2 minutes ago' },
+      { id: 2, type: 'improvement', message: 'Performance improved by 15% in "Customer Analytics"', time: '5 minutes ago' },
+      { id: 3, type: 'created', message: 'New workflow "Social Media Publisher" created', time: '12 minutes ago' },
+      { id: 4, type: 'optimization', message: 'Auto-optimization applied to "Email Automation"', time: '18 minutes ago' },
+      { id: 5, type: 'success', message: 'Workflow "Inventory Sync" executed (234 runs)', time: '30 minutes ago' },
+      { id: 6, type: 'improvement', message: 'AI model accuracy improved to 97.8%', time: '45 minutes ago' },
+      { id: 7, type: 'created', message: 'Test credentials configured for "Payment Processing"', time: '1 hour ago' },
+      { id: 8, type: 'optimization', message: 'Database backup completed with 99.8% success rate', time: '3 hours ago' }
     ],
     systemHealth: {
       smartSQL: 'Healthy',
@@ -21,6 +25,13 @@ export const mockData = {
       smartInference: 'Active',
       smartBuckets: 'Online',
       smartMemory: 'Operational'
+    },
+    testCredentials: {
+      cerebras: { apiKey: 'test_key_cerebras_xyz789', endpoint: 'https://api.cerebras.ai/v1', status: 'active' },
+      elevenlabs: { apiKey: 'test_key_elevenlabs_abc123', voiceId: 'test_voice_alert_001', status: 'active' },
+      liquidmetal: { apiKey: 'lm_test_key_workflow_def456', endpoint: 'https://api.liquidmetal.com/v1', status: 'active' },
+      raindrop: { apiKey: 'test_key_raindrop_ghi789', services: ['smartSQL', 'smartBuckets', 'smartMemory', 'smartInference'], status: 'active' },
+      vultr: { apiKey: 'test_key_vultr_jkl012', endpoint: 'https://api.vultr.com/v2', status: 'active' }
     }
   },
   

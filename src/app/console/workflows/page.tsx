@@ -8,7 +8,7 @@ import { mockIntegrationData, isTestCredentials } from '@/lib/mock-integrations'
 import { isTestUser } from '@/lib/auth'
 
 export default function Workflows() {
-  const useTestData = isTestUser() || isTestCredentials(process.env.LIQUIDMETAL_API_KEY || '')
+  const useTestData = isTestUser() || isTestCredentials(process.env.LIQUIDMETAL_API_KEY || '') || process.env.NODE_ENV === 'development'
   const workflows = useTestData ? mockIntegrationData.console.workflows : []
   
   return (

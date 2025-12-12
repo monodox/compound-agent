@@ -85,7 +85,7 @@ export default function AgentPlayground() {
                 <div className="text-center text-slate-600 py-8">
                   <p>Start a conversation with the Compound Agent</p>
                   {useTestData && (
-                    <p className="text-sm mt-2">Try asking: "How are my workflows performing?" or "Check system health"</p>
+                    <p className="text-sm mt-2">Try asking: &ldquo;How are my workflows performing?&rdquo; or &ldquo;Check system health&rdquo;</p>
                   )}
                 </div>
               ) : (
